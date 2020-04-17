@@ -64,26 +64,35 @@ let quotes = [
 function getRandomQuote() {
   let text = ``; 
   const randNum = Math.floor(Math.random() * quotes.length);
-  for (let prop in quotes[randNum]) {
-      if(quotes[randNum][prop]) {
-        text += quotes[randNum][prop];
-      }
-    } 
-
-  return text;
+    return quotes[randNum];  
 }
-
-console.log(getRandomQuote()); 
 
 /***
  * `printQuote` function
 ***/
+function printQuote() {
+  let randQuoteObj = getRandomQuote(); 
+  let html = ``;
+  html +=`<p class="quote"> ${randQuoteObj.quote} </p>
+  <p class="source"> ${randQuoteObj.source}`
+  if (randQuoteObj.citation) {
+    html += `<span class="citation"> ${randQuoteObj.citation}</span>`;
+  }
+  if (randQuoteObj.year) {
+    html += `<span class="year"> ${randQuoteObj.year}</span>`;
+  }
+  if (randQuoteObj.nationality) {
+    html += `<span class="nationality"> ${randQuoteObj.nationality}</span>`;
+  }
+  html += `</p>`;
 
+  document.getElementById('quote-box').innerHTML = html;
+}
 
-
+printQuote();  
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-//**document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false);
