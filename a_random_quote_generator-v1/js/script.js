@@ -7,9 +7,18 @@ project 1 - A Random Quote Generator
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
+function randBgColor() {
+  let x = Math.floor(Math.random() * 256);
+  let y = Math.floor(Math.random() * 256);
+  let z = Math.floor(Math.random() * 256);
+  let bgColor = `rgb(${x}, ${y}, ${z})`;
+
+document.body.style.background = bgColor;
+}
+
 /*** 
  * `quotes` array 
-***/
+ ***/
 let quotes = [
   {quote: `A goal without a plan is a wish.`,
   source: `Antoine de Saint-Exupéry`,
@@ -18,39 +27,39 @@ let quotes = [
   nationality: `French`
 },
 
-  {quote: `Every result that you desire is preceded by a process that is required to produce the result. When you define YOUR process and commit to it for an extended period of time, the results take care of themselves.`,
-  source: `Hal Elrod`,
-  citation: `The Miracle Morning for Salespeople`,
-  year: 2015,
-  nationality: `American`
+{quote: `Every result that you desire is preceded by a process that is required to produce the result. When you define YOUR process and commit to it for an extended period of time, the results take care of themselves.`,
+source: `Hal Elrod`,
+citation: `The Miracle Morning for Salespeople`,
+year: 2015,
+nationality: `American`
 },
 
-  {quote: `If you want to increase your success rate, double your failure rate.`,
-  source: `Thomas Watson`,
-  citation: null,
-  year: null,
-  nationality: `American`
+{quote: `If you want to increase your success rate, double your failure rate.`,
+source: `Thomas Watson`,
+citation: null,
+year: null,
+nationality: `American`
 },
 
-  {quote: `The impediment to action advances action...  What stands in the way becomes the way.`,
-  source: `Marcus Aurelius`,
-  citation: `Meditations`,
-  year: `161 - 180 CE`, 
-  nationality: `Roman`
+{quote: `The impediment to action advances action...  What stands in the way becomes the way.`,
+source: `Marcus Aurelius`,
+citation: `Meditations`,
+year: `161 - 180 CE`, 
+nationality: `Roman`
 },
 
-  {quote: `Being busy is most often used as a guise for avoiding the few critically important but uncomfortable actions.`,
-  source: `Timothy Ferriss`,
-  citation: `The 4-Hour Workweek`,
-  year: 2007,
-  nationality:`American`
+{quote: `Being busy is most often used as a guise for avoiding the few critically important but uncomfortable actions.`,
+source: `Timothy Ferriss`,
+citation: `The 4-Hour Workweek`,
+year: 2007,
+nationality:`American`
 },
 
-  {quote: `Nothing in the world is worth having or worth doing unless it means effort, pain, difficulty… I have never in my life envied a human being who led an easy life.`,
-  source: `Theodore Roosevelt`,
-  citation: null,
-  year: null,
-  nationality: `American`
+{quote: `Nothing in the world is worth having or worth doing unless it means effort, pain, difficulty… I have never in my life envied a human being who led an easy life.`,
+source: `Theodore Roosevelt`,
+citation: null,
+year: null,
+nationality: `American`
 }
 
 ] 
@@ -58,31 +67,32 @@ let quotes = [
 
 /***
  * `getRandomQuote` function
-***/
+ ***/
 
 
 function getRandomQuote() {
   let text = ``; 
   const randNum = Math.floor(Math.random() * quotes.length);
-    return quotes[randNum];  
+  return quotes[randNum];  
 }
 
 /***
  * `printQuote` function
-***/
+ ***/
 function printQuote() {
+  randBgColor(); 
   let randQuoteObj = getRandomQuote(); 
   let html = ``;
-  html +=`<p class="quote"> ${randQuoteObj.quote} </p>
-  <p class="source"> ${randQuoteObj.source}`
+  html +=`<p class="quote">${randQuoteObj.quote} </p>
+  <p class="source">${randQuoteObj.source}`
   if (randQuoteObj.citation) {
-    html += `<span class="citation"> ${randQuoteObj.citation}</span>`;
+    html += `<span class="citation">${randQuoteObj.citation}</span>`;
   }
   if (randQuoteObj.year) {
-    html += `<span class="year"> ${randQuoteObj.year}</span>`;
+    html += `<span class="year">${randQuoteObj.year}</span>`;
   }
   if (randQuoteObj.nationality) {
-    html += `<span class="nationality"> ${randQuoteObj.nationality}</span>`;
+    html += `<span class="nationality">${randQuoteObj.nationality}</span>`;
   }
   html += `</p>`;
 
