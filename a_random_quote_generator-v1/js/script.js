@@ -4,7 +4,7 @@ project 1 - A Random Quote Generator
 script.js by Brandon Rowe
 ******************************************/
 
-// The function below randomly changes the background color.
+// The function below randomly changes the background color. 
 
 function randBgColor() {
   let x = Math.floor(Math.random() * 256);
@@ -69,7 +69,6 @@ nationality: `American`
 
 
 function getRandomQuote() {
-  let text = ``; 
   const randNum = Math.floor(Math.random() * quotes.length);
   return quotes[randNum];  
 }
@@ -96,7 +95,7 @@ function printQuote() {
   document.getElementById('quote-box').innerHTML = html;
 }
 
-// The code below randomly calls the printQuote function and then auto-refreshes the page every ten seconds with a new quote. 
+// The code below calls the printQuote function and then auto-refreshes the page every ten seconds with a new quote. 
 
 printQuote();
 setInterval(printQuote, 10000);
