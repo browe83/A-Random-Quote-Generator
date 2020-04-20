@@ -1,11 +1,10 @@
 /******************************************
 Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
+script.js by Brandon Rowe
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+// The function below randomly changes the background color.
 
 function randBgColor() {
   let x = Math.floor(Math.random() * 256);
@@ -18,9 +17,8 @@ function randBgColor() {
 
 
 
-/*** 
- * `quotes` array 
- ***/
+//The array below contains information on quotes themed on persistance.
+ 
 let quotes = [
   {quote: `A goal without a plan is a wish.`,
   source: `Antoine de Saint-Exupéry`,
@@ -67,9 +65,7 @@ nationality: `American`
 ] 
 
 
-/***
- * `getRandomQuote` function
- ***/
+//The function below randomly selects a quote from the above quotes array.
 
 
 function getRandomQuote() {
@@ -78,9 +74,7 @@ function getRandomQuote() {
   return quotes[randNum];  
 }
 
-/***
- * `printQuote` function
- ***/
+//The function below complies an html string using the information supplied by the getRandomQuote function.  It then uses the html to change the body accordingly.
 
 function printQuote() {
   randBgColor(); 
@@ -101,9 +95,14 @@ function printQuote() {
   
   document.getElementById('quote-box').innerHTML = html;
 }
+
+// The code below randomly calls the printQuote function and then auto-refreshes the page every ten seconds with a new quote. 
+
 printQuote();
 setInterval(printQuote, 10000);
-/***
+
+/***The code and message below were provided in the starter files for this project.
+ 
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
  ***/
