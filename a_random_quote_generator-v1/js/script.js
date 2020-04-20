@@ -12,9 +12,11 @@ function randBgColor() {
   let y = Math.floor(Math.random() * 256);
   let z = Math.floor(Math.random() * 256);
   let bgColor = `rgb(${x}, ${y}, ${z})`;
-
-document.body.style.background = bgColor;
+  
+  document.body.style.background = bgColor;
 }
+
+
 
 /*** 
  * `quotes` array 
@@ -79,6 +81,7 @@ function getRandomQuote() {
 /***
  * `printQuote` function
  ***/
+
 function printQuote() {
   randBgColor(); 
   let randQuoteObj = getRandomQuote(); 
@@ -95,14 +98,13 @@ function printQuote() {
     html += `<span class="nationality">${randQuoteObj.nationality}</span>`;
   }
   html += `</p>`;
-
+  
   document.getElementById('quote-box').innerHTML = html;
 }
-
-printQuote();  
+setInterval(printQuote, 1000);
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
-***/
-
+ ***/
+  
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
