@@ -20,21 +20,21 @@ let quotes = [
     source: `Antoine de Saint-Exupéry`,
     citation: null,
     year: null,
-    nationality: `French`,
+    nationality: `French`
   },
   {
     quote: `Every result that you desire is preceded by a process that is required to produce the result. When you define YOUR process and commit to it for an extended period of time, the results take care of themselves.`,
     source: `Hal Elrod`,
     citation: `The Miracle Morning for Salespeople`,
     year: 2015,
-    nationality: `American`,
+    nationality: `American`
   },
   {
     quote: `If you want to increase your success rate, double your failure rate.`,
     source: `Thomas Watson`,
     citation: null,
     year: null,
-    nationality: `American`,
+    nationality: `American`
   },
 
   {
@@ -42,7 +42,7 @@ let quotes = [
     source: `Marcus Aurelius`,
     citation: `Meditations`,
     year: `161 - 180 CE`,
-    nationality: `Roman`,
+    nationality: `Roman`
   },
 
   {
@@ -50,7 +50,7 @@ let quotes = [
     source: `Timothy Ferriss`,
     citation: `The 4-Hour Workweek`,
     year: 2007,
-    nationality: `American`,
+    nationality: `American`
   },
 
   {
@@ -58,8 +58,8 @@ let quotes = [
     source: `Theodore Roosevelt`,
     citation: null,
     year: null,
-    nationality: `American`,
-  },
+    nationality: `American`
+  }
 ];
 
 //Randomly selects a quote from the above quotes array.
