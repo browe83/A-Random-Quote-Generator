@@ -11,4 +11,4 @@ This project creates an app that displays a random motivational quote.  The quot
 * GitHub
 
 ## Installation
-After cloning repository, run `npm install` to install dependencies.  Then run `npm start` to launch the application.
+After cloning repository, locate and open the index.html file to launch the app.
